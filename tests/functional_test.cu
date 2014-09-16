@@ -70,7 +70,7 @@ int gpu_check()
 	cuda_safe_call(cudaMalloc(&buf_d, sizeof(int) * 4));
 
 	std::cout << "Running GPU functional test on " << divisor_count << " divisors, with " << grid_size * threadblock_size << " dividents for each divisor" << std::endl;
-	for(int d = 2; d < divisor_count; ++d)
+	for(int d = 1; d < divisor_count; ++d)
 	{
 		for(int sign = 1; sign >= -1; sign -= 2)
 		{
@@ -103,7 +103,7 @@ int cpu_check()
 	const int divisor_count = 100000;
 	const int divident_count = 1000000;
 	std::cout << "Running CPU functional test on " << divisor_count << " divisors, with " << divident_count << " dividents for each divisor" << std::endl;
-	for(int d = 2; d < divisor_count; ++d)
+	for(int d = 1; d < divisor_count; ++d)
 	{
 		for(int sign = 1; sign >= -1; sign -= 2)
 		{

@@ -52,6 +52,21 @@ private:
 	__host__ __device__
 	void update_magic_numbers()
 	{
+		if (d == 1)
+		{
+			M = 0;
+			s = -1;
+			n_add_sign = 1;
+			return;
+		}
+		else if (d == -1)
+		{
+			M = 0;
+			s = -1;
+			n_add_sign = -1;
+			return;
+		}
+
 		int p;
 		unsigned int ad, anc, delta, q1, r1, q2, r2, t;
 		const unsigned two31 = 0x80000000;
@@ -109,8 +124,11 @@ int operator/(const int n, const int_fastdiv& divisor)
 	q = (((unsigned long long)((long long)divisor.M * (long long)n)) >> 32);
 #endif
 	q += n * divisor.n_add_sign;
-	q >>= divisor.s; // we rely on this to be implemented as arithmetic shift
-	q += (((unsigned int)q) >> 31);
+	if (divisor.s >= 0)
+	{
+		q >>= divisor.s; // we rely on this to be implemented as arithmetic shift
+		q += (((unsigned int)q) >> 31);
+	}
 	return q;
 }
 
