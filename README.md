@@ -39,4 +39,6 @@ Here we add *#include* directive and replace the type of the kernel's parameter 
     ...
     kernel_name<<<grid_size,threadblock_size>>>(rand());
 
-That's it. *int_fastdiv* object will be constructed right when you call the kernel - on the host, once. Each thread of the CUDA kernel will utlizie fast integer division numbers when dividing *elem_id* by *d* of type *int_fastdiv*.
+That's it. *int_fastdiv* object will be constructed right when you call the kernel - on the host, once. Each thread of the CUDA kernel will utlizie fast integer division procedure when dividing *elem_id* by *d* of type *int_fastdiv*.
+
+Experiments show that division by *int_fastdiv* is about 2x faster than plain division by integer.
