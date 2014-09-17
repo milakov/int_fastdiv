@@ -11,8 +11,8 @@ But if the divisor is known at compile time then the compiler calculates a pair 
 
 Well, it is a little bit more complex: there are some corner cases requring additional operations. Nevertheless these multiplication and right shift remain the core of this fast division.
 
-int_fastdiv
-===========
+*int_fastdiv* class
+=================
 
 What if you have integer division and the divisor is not known at compile time? If you do integer division by the same divisor multiple times then you might use the same trick the compiler does, here in runtime. And you don't have to do it manually - **int_fastdiv** class does all the dirty work, calculating those magic numbers. All you need to do is to include *int_fastdiv.h* and replace integer type of the divisor with *int_fastdiv*.
 
