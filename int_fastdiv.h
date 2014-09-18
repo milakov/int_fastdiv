@@ -140,4 +140,64 @@ int operator%(const int n, const int_fastdiv& divisor)
 	return remainder;
 }
 
+__host__ __device__
+int operator/(const unsigned int n, const int_fastdiv& divisor)
+{
+	return ((int)n) / divisor;
+}
+
+__host__ __device__
+int operator%(const unsigned int n, const int_fastdiv& divisor)
+{
+	return ((int)n) % divisor;
+}
+
+__host__ __device__
+int operator/(const short n, const int_fastdiv& divisor)
+{
+	return ((int)n) / divisor;
+}
+
+__host__ __device__
+int operator%(const short n, const int_fastdiv& divisor)
+{
+	return ((int)n) % divisor;
+}
+
+__host__ __device__
+int operator/(const unsigned short n, const int_fastdiv& divisor)
+{
+	return ((int)n) / divisor;
+}
+
+__host__ __device__
+int operator%(const unsigned short n, const int_fastdiv& divisor)
+{
+	return ((int)n) % divisor;
+}
+
+__host__ __device__
+int operator/(const char n, const int_fastdiv& divisor)
+{
+	return ((int)n) / divisor;
+}
+
+__host__ __device__
+int operator%(const char n, const int_fastdiv& divisor)
+{
+	return ((int)n) % divisor;
+}
+
+__host__ __device__
+int operator/(const unsigned char n, const int_fastdiv& divisor)
+{
+	return ((int)n) / divisor;
+}
+
+__host__ __device__
+int operator%(const unsigned char n, const int_fastdiv& divisor)
+{
+	return ((int)n) % divisor;
+}
+
 #endif
