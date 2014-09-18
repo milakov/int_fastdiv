@@ -3,11 +3,15 @@ Fast integer division
 
 Integer division is known to be relatively slow on modern CPUs and GPUs. The compiler generates ~30 instructions for a single
 
-    int q = n / d;
+```c++
+int q = n / d;
+```
 
 But if the divisor is known at compile time then the compiler calculates a pair of magic numbers `M` and `s`, such that
 
-    q = hi32bits(n * M) >> s; // it works for all integer n
+```c++
+q = hi32bits(n * M) >> s; // it works for all integer n
+```
 
 Well, it is a little bit more complex: there are some corner cases requring additional operations. Nevertheless these multiplication and right shift remain the core of this fast division.
 
