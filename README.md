@@ -1,7 +1,7 @@
 Fast integer division
 =====================
 
-Integer division is known to be relatively slow on modern CPUs and GPUs. The compiler generates ~30 instructions for a single
+Integer division is known to be relatively slow on modern CPUs and GPUs. The compiler generates ~30 instructions for a single integer division operation:
 
 ```c++
 int q = n / d;
