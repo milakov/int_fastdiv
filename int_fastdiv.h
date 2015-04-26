@@ -20,7 +20,7 @@
 class int_fastdiv
 {
 public:
-	// divisor != -1,0,1 
+	// divisor != 0 
 	__host__ __device__
 	int_fastdiv(int divisor = 0)
 	: d(divisor)
