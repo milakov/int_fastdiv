@@ -21,14 +21,14 @@ class int_fastdiv
 {
 public:
 	// divisor != 0 
-	__host__ __device__
+	__host__ __device__ __forceinline__
 	int_fastdiv(int divisor = 0)
 	: d(divisor)
 	{
 		update_magic_numbers();
 	}
 
-	__host__ __device__
+	__host__ __device__ __forceinline__
 	int_fastdiv& operator =(int divisor)
 	{
 		this->d = divisor;
@@ -36,7 +36,7 @@ public:
 		return *this;
 	}
 
-	__host__ __device__
+	__host__ __device__ __forceinline__
 	operator int() const
 	{
 		return d;
@@ -49,7 +49,7 @@ private:
 	int n_add_sign;
 
 	// Hacker's Delight, Second Edition, Chapter 10, Integer Division By Constants
-	__host__ __device__
+	__host__ __device__ __forceinline__
 	void update_magic_numbers()
 	{
 		if (d == 1)
@@ -110,11 +110,11 @@ private:
 			n_add_sign = 0;			
 	}
 
-	__host__ __device__
+	__host__ __device__ __forceinline__
 	friend int operator/(const int divident, const int_fastdiv& divisor);
 };
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const int n, const int_fastdiv& divisor)
 {
 	int q;
@@ -132,7 +132,7 @@ int operator/(const int n, const int_fastdiv& divisor)
 	return q;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const int n, const int_fastdiv& divisor)
 {
 	int quotient = n / divisor;
@@ -140,61 +140,61 @@ int operator%(const int n, const int_fastdiv& divisor)
 	return remainder;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const unsigned int n, const int_fastdiv& divisor)
 {
 	return ((int)n) / divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const unsigned int n, const int_fastdiv& divisor)
 {
 	return ((int)n) % divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const short n, const int_fastdiv& divisor)
 {
 	return ((int)n) / divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const short n, const int_fastdiv& divisor)
 {
 	return ((int)n) % divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const unsigned short n, const int_fastdiv& divisor)
 {
 	return ((int)n) / divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const unsigned short n, const int_fastdiv& divisor)
 {
 	return ((int)n) % divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const char n, const int_fastdiv& divisor)
 {
 	return ((int)n) / divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const char n, const int_fastdiv& divisor)
 {
 	return ((int)n) % divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator/(const unsigned char n, const int_fastdiv& divisor)
 {
 	return ((int)n) / divisor;
 }
 
-__host__ __device__
+__host__ __device__ __forceinline__
 int operator%(const unsigned char n, const int_fastdiv& divisor)
 {
 	return ((int)n) % divisor;
