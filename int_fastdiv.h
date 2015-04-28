@@ -70,7 +70,7 @@ private:
 		int p;
 		unsigned int ad, anc, delta, q1, r1, q2, r2, t;
 		const unsigned two31 = 0x80000000;
-		ad = abs(d);
+		ad = (d == 0) ? 1 : abs(d);
 		t = two31 + ((unsigned int)d >> 31);
 		anc = t - 1 - t % ad;
 		p = 31;
