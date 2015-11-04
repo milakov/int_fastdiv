@@ -18,7 +18,7 @@ Well, it is a little bit more complex: there are some corner cases requring addi
 *int_fastdiv* class
 =================
 
-What if you have integer division and the divisor is not known at compile time? If you do integer division by the same divisor multiple times then you might use the same trick the compiler does, here in runtime. And you don't have to do it manually - **int_fastdiv** class does all the dirty work, calculating those magic numbers. All you need to do is to `#include *int_fastdiv.h` and replace `int` type of the divisor with `int_fastdiv`.
+What if you have integer division and the divisor is not known at compile time? If you do integer division by the same divisor multiple times then you might use the same trick the compiler does, here in runtime. And you don't have to do it manually - **int_fastdiv** class does all the dirty work, calculating those magic numbers. All you need to do is to `#include "int_fastdiv.h"` and replace `int` type of the divisor with `int_fastdiv`.
 
 The class has all the necessary constructors and operators defined to allow you using objects of this class as if they were integers. Specifically, it overrides / and % operators to utilize precomputed magic numbers.
 
